@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
+// import org.springframework.web.bind.annotation.RequestHeader;
 
 
 @FeignClient(name = "store-instituicao")
@@ -24,6 +24,6 @@ public interface InstituicaoController {
 
     @GetMapping("/instituicao")
     public ResponseEntity<InstituicaoOut[]> readAll(
-        @RequestHeader(required = false, name = "Authorization") String token
+        // @RequestHeader(required = false, name = "Authorization") String token
     );
 }
