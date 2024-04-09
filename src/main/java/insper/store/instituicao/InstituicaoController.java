@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 
 @FeignClient(name = "store-instituicao")
@@ -15,7 +16,8 @@ public interface InstituicaoController {
 
     @PostMapping("/instituicao")
     public ResponseEntity<InstituicaoOut> create(
-        @RequestBody(required = true) InstituicaoIn in
+        @RequestBody(required = true) InstituicaoIn in,
+        @RequestHeader(required = true, name = "role-user") String roleUser
     );
 
     @GetMapping("/instituicao/{id}")
