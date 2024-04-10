@@ -25,4 +25,5 @@ public interface InstituicaoController {
 
     @GetMapping("/instituicao")
     public ResponseEntity<List<InstituicaoOut>> readAll();
+    
 }
