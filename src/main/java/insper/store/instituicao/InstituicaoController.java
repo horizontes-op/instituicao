@@ -22,10 +22,16 @@ public interface InstituicaoController {
 
     @GetMapping("/instituicao/{id}")
     public ResponseEntity<InstituicaoOut> read(
+
         @PathVariable(required = true) String id
     );
 
     @GetMapping("/instituicao")
     public ResponseEntity<List<InstituicaoOut>> readAll();
+
+    @GetMapping("/instituicao/nome")
+    public ResponseEntity<InstituicaoOut> getByNome(
+        @RequestBody(required = true) String nome
+    );
     
 }
