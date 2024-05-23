@@ -16,8 +16,8 @@ public interface InstituicaoController {
 
     @PostMapping("/instituicao")
     public ResponseEntity<InstituicaoOut> create(
-        @RequestBody(required = true) InstituicaoIn in,
-        @RequestHeader(required = true, name = "role-user") String roleUser
+        @RequestBody(required = true) InstituicaoIn in
+        // @RequestHeader(required = true, name = "role-user") String roleUser
     );
 
     @GetMapping("/instituicao/{id}")
@@ -31,7 +31,7 @@ public interface InstituicaoController {
 
     @GetMapping("/instituicao/nome")
     public ResponseEntity<InstituicaoOut> getByNome(
-        @RequestBody(required = true) String nome
+        @RequestBody(required = true) InstituicaoBuscaNome in
     );
     
 }
