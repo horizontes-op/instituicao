@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @FeignClient(name = "store-instituicao")
@@ -27,11 +28,11 @@ public interface InstituicaoController {
     );
 
     @GetMapping("/instituicao")
-    public ResponseEntity<List<InstituicaoOut>> readAll();
+    public ResponseEntity<List<InstituicaoOut>> readAll(@RequestParam(required = false) String nome);
 
-    @GetMapping("/instituicao/nome")
-    public ResponseEntity<InstituicaoOut> getByNome(
-        @RequestBody(required = true) InstituicaoBuscaNome in
-    );
+    // @GetMapping("/instituicao/nome")
+    // public ResponseEntity<InstituicaoOut> getByNome(
+    //     @RequestParam String nome
+    // );
     
 }
